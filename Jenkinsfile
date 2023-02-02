@@ -17,7 +17,7 @@ terraform 'terraform'
 
 
     stages {
-        stage('checkout') {
+        stage('checkout scm') {
             steps {
                  git url: 'https://github.com/rajeshwarandevops/awsinfra.git', branch: 'main',
                   credentialsId: 'github-api'                    
