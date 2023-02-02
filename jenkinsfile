@@ -22,7 +22,7 @@ terraform 'terraform 1.3.0'
                  script{
                         dir("terraform")
                         {
-                            git "https://github.com/rajeshwarandevops/aws-infra-Iac.git"
+                            git "https://github.com/rajeshwarandevops/aws-infra-Iac"
                         }
                     }
                 }
