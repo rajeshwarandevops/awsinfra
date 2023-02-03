@@ -54,9 +54,9 @@ terraform 'terraform'
         }
     }
 
-  post {
+post {
         always {
-            slackSend channel: 'aws-terraform-iac-jenkins', message: "Please find the status of the Pipeline Status -${currentBuild.currentResult} ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+           slackSend channel: 'aws-terraform-iac-jenkins', message: "Please find the status of the Pipeline Status -${currentBuild.currentResult} ${env.JOB_NAME} ${env.BUILD_NUMBER}"
         } 
   
 
