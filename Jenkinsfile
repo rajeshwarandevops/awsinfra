@@ -26,7 +26,7 @@ pipeline {
         stage('Terraform init') {
             steps {
                 echo 'Initiliazing terraform project...'
-                sh 'sudo terraform init'
+                sh 'terraform init'
                
             }
         }
@@ -44,7 +44,7 @@ pipeline {
         stage('Terraform plan') {
             steps {
                 echo 'Terraform plan for the dry run...'
-                sh 'sudo terraform plan'
+                sh 'terraform plan'
                
             }
         }
@@ -79,7 +79,7 @@ pipeline {
          stage('Terraform apply') {
             steps {
                 echo 'Terraform apply...'
-                sh 'sudo terraform apply --auto-approve'
+                sh 'terraform apply --auto-approve'
                
                
             }
@@ -90,7 +90,7 @@ pipeline {
     
      post { 
         always { 
-            echo 'I will always say Hello again!'
+            echo 'Terraform Automation & AWS Infra!'
             slackSend channel: '#aws-terraform-iac-jenkins', color: COLOR_MAP[currentBuild.currentResult], message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
         }
     }
