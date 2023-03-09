@@ -67,7 +67,8 @@ terraform 'terraform'
             steps {
                 
                 sh """
-                 checkov -d .
+                cd var/jenkins_home/workspace/aws-terraform-IAC
+                checkov -d .
                 #checkov -d . --skip-check CKV_AWS_23,CKV_AWS_24,CKV_AWS_126,CKV_AWS_135,CKV_AWS_8,CKV_AWS_23,CKV_AWS_24
                 #checkov -d . --skip-check CKV_AWS*
                 """
